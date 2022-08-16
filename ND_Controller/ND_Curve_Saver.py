@@ -25,6 +25,7 @@ def save_curve():
 
 
 def saved_dict_path():
+    """Returns a path to the saved_curves/saved_curves_dict.json file."""
     nd = os.path.dirname(os.path.realpath(__file__))  # script's path
     return os.path.join(nd, 'saved_curves', 'saved_curves_dict.json')  # take json file in saved curves folder
 
@@ -51,6 +52,7 @@ def create_proxy_custom_curve():
 
 
 def write_json_data(data):
+    """Write data to a JSON file. The file name is returned by the saved_dict_path() function."""
     json_path = saved_dict_path()
     with open(json_path, 'w') as outfile:
         json.dump(data, outfile, indent=4)
